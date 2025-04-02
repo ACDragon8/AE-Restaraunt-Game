@@ -1,8 +1,8 @@
 const config = {
     parent: 'phaser-game',
     type: Phaser.WEBGL,
-    width: 1024,
-    height: 762,
+    width: 1280,
+    height: 720,
     pixelArt: true,
     zoom: 1,
     physics: {
@@ -11,7 +11,7 @@ const config = {
             debug: true,
         }
     },
-    scene: [Play]
+    scene: [Load, Play]
     
 }
 

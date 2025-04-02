@@ -4,9 +4,7 @@ class Play extends Phaser.Scene {
     }
 
     preload() {
-        this.load.path ='./assets/'
-        this.load.image('slime','slime.png')
-        this.load.image('anabel','anabel.png')
+        
     }
 
     create() {
@@ -18,8 +16,16 @@ class Play extends Phaser.Scene {
         this.keys.DKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.D)
         this.keys.FKey = this.input.keyboard.addKey(Phaser.Input.Keyboard.KeyCodes.F)
 
+        //background
+        this.map = this.add.image(0,0,'restaraunt').setOrigin(0,0)
+
         //player
-        this.player = new Player(this, 100, 100, 'anabel')
+        this.player = new Player(this, 500, 500, 'anabel')
+
+        //camera
+        this.cameras.main.setBounds(0,0,this.map.width, this.map.height)
+        this.cameras.main.startFollow(this.player, false)
+        this.physics.world.setBounds(0,0,this.map.width, this.map.height)
 
     }
 

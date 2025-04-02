@@ -4,7 +4,7 @@ class Player extends Phaser.Physics.Arcade.Sprite {
         scene.add.existing(this)
         scene.physics.add.existing(this)
         this.playerdata = {
-            moveSpeed:200
+            moveSpeed: 500
         }
         this.body.setSize(this.width,this.height)
         this.setCollideWorldBounds(true)
